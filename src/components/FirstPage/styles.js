@@ -29,7 +29,7 @@ export const ListItem = styled.div`
 export const ListItemMark = styled.div`
   display: flex;
   &:after {
-    content: 'test';
+    // content: 'test';
     background: orange;
     border-radius: 50%;
   }
@@ -56,7 +56,7 @@ export const P = styled.p`
 export const Button = styled.div`
   background: white;
   border-radius: 10px;
-  color: purple;
+  color: #4742e6;
   display: flex;
   justify-content: center;
   align-items: center;

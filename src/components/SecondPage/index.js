@@ -1,11 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import {
   Header,
   SearchBox,
   List,
   ListItem,
-  Button
+  Button,
+  Tray,
+  ListItemIcon,
+  ListItemContent
 } from './styles';
 
 const data = [
@@ -20,7 +24,11 @@ const data = [
 
 const renderListItems = (items) => items.map(item =>
   <ListItem>
-    {item}
+    <ListItemIcon>
+    </ListItemIcon>
+    <ListItemContent>
+      {item}
+    </ListItemContent>
   </ListItem>
 )
 
@@ -29,15 +37,23 @@ export const SecondPage = () => <>
     Where is your current balance?
   </Header>
 
-  <SearchBox>
-    Search
+  <SearchBox
+    placeholder="Search"
+  >
   </SearchBox>
 
-  <List>
-    {renderListItems(data)}
-  </List>
+  <Tray>
 
-  <Button>
-    Next
-  </Button>
+
+    <List>
+      {renderListItems(data)}
+    </List>
+
+    <Link to="/first">
+      <Button>
+        Next
+      </Button>
+    </Link>
+
+  </Tray>
 </>

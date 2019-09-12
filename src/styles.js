@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  background: purple;
+  background: #4742e6;
   justify-content: center;
   align-items: center;
   height: 100vh;

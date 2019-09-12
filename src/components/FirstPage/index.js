@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import {
   Checkmark,
   Container,
@@ -56,7 +58,9 @@ export const FirstPage = () => <>
     </ListItem>
   </List>
 
-  <Button>
-    Continue
-  </Button>
+  <Link to="/second">
+    <Button>
+      Continue
+    </Button>
+  </Link>
 </>

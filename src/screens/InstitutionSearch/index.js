@@ -1,16 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-
 import {
+  Page,
   Header,
   SearchBox,
   List,
   ListItem,
-  Button,
   Tray,
   ListItemIcon,
   ListItemContent
 } from './styles';
+
+import { Button } from '../../components';
 
 const data = [
   'Chase',
@@ -32,7 +32,7 @@ const renderListItems = (items) => items.map(item =>
   </ListItem>
 )
 
-export const SecondPage = () => <>
+export const InstitutionSearch = () => <Page>
   <Header>
     Where is your current balance?
   </Header>
@@ -49,11 +49,9 @@ export const SecondPage = () => <>
       {renderListItems(data)}
     </List>
 
-    <Link to="/first">
-      <Button>
+      <Button to="/welcome">
         Next
       </Button>
-    </Link>
 
   </Tray>
-</>
+</Page>

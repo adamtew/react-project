@@ -1,36 +1,35 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import styles from './App.css'
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
 import {
   Container,
   Modal,
 } from './styles'
 
-import { FirstPage, SecondPage } from './components';
+import { Welcome, InstitutionSearch } from './screens';
 
 
 function App() {
   return (
     <Router>
       <Route render={ ({ location }) => (
-      <Container>
-        <Modal>
-          <TransitionGroup>
+        <Container>
+          <Modal>
+          <SwitchTransition mode="in-out">
             <CSSTransition
               key={location.key}
-              timeout={300}
+              timeout={200}
               classNames="fade"
             >
               <Switch location={location}>
-                <Route exact path="/first" component={FirstPage} />
-                <Route exact path="/second" component={SecondPage} />
+                <Route exact path="/welcome" component={Welcome} />
+                <Route exact path="/institution-search" component={InstitutionSearch} />
                 <Route render={() => <div>Not Found</div>} />
 
               </Switch>
             </CSSTransition>
-          </TransitionGroup>
+          </SwitchTransition>
         </Modal>
       </Container>
   )}/>

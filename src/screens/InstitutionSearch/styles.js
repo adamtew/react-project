@@ -1,8 +1,16 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
+import { THEME } from '../../lib/theme'
+
+export const Page = styled.div`
+  background-color: ${THEME.PRIMARY_1};
+  position: absolute;
+`
 
 export const Header = styled.h3`
-  color: white;
-  font-size: 20px;
+  color: ${THEME.SECONDARY};
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 24px;
 `
 
 export const SearchBox = styled.input`
@@ -10,10 +18,15 @@ export const SearchBox = styled.input`
   margin: 0 0 20px 0;
   height: 20px;
   padding: 15px 0 15px 43px;
-  background: rgba(0,0,0,.2);
-  border-radius: 10px;
+  background-color: #2819AC;
+  border-radius: 15px;
   border: none;
-  font-size: 18px;
+
+  // opacity: 0.5;
+  color: rgba(255, 255, 255, 0.5);
+  // color: #FFFFFF;
+	font-size: 16px;
+	line-height: 19px;
 
   &:after {
     content: 'asldkfj';
@@ -26,6 +39,7 @@ export const Tray = styled.div`
   background: white;
   margin: 0 -40px;
   padding: 0 40px 20px 40px;
+  border-radius: 15px 15px 0 0;
 `
 
 export const List = styled.div`
@@ -44,24 +58,32 @@ export const ListItemIcon = styled.div`
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: orange;
+  background: ${THEME.PLACEHOLDER};
   margin: 0 10px 0 0;
+
 `
 
 export const ListItemContent = styled.div`
   display: flex;
   align-items: center;
-  font-size: 18px;
+
+	color: #002251;
+	font-size: 16px;
+	line-height: 19px;
 `
 
 export const Button = styled.div`
   width: 100%;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 10px;
-  background: #4742e6;
-  color: white;
+  background: ${THEME.PRIMARY_1};
+  color: ${THEME.SECONDARY};
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 0;
+
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 19px;
 `

@@ -1,24 +1,23 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
-
 import {
+  Screen,
   Checkmark,
-  Container,
   Header,
   Header2,
   List,
   ListItem,
-  Modal,
   P,
   TopImage,
   ListItemMark,
   Note,
-  Button,
-  ListItemContent
-} from './styles'
+  ListItemContent,
+  CircleCheck
+} from './styles';
 
-export const FirstPage = () => <>
+import { Button } from '../../components';
+
+export const Welcome = () => <Screen>
   <TopImage />
   <Header>
     Hi, Jane!
@@ -32,6 +31,7 @@ export const FirstPage = () => <>
     <ListItem>
       <ListItemMark>
         <Checkmark />
+          <CircleCheck />
       </ListItemMark>
       <ListItemContent>
         <Header2>
@@ -58,9 +58,10 @@ export const FirstPage = () => <>
     </ListItem>
   </List>
 
-  <Link to="/second">
-    <Button>
+    <Button 
+      to="/institution-search"
+      primary={false}
+    >
       Continue
     </Button>
-  </Link>
-</>
+</Screen>

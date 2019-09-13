@@ -1,24 +1,30 @@
 import React from 'react';
 
 import {
+  Action,
   Screen,
-  Checkmark,
   Header,
   Header2,
   List,
   ListItem,
   P,
-  TopImage,
   ListItemMark,
   Note,
   ListItemContent,
-  CircleCheck
 } from './styles';
 
-import { Button } from '../../components';
+import { Button, Checkmark } from '../../components';
+
+import HeaderImage from './header.png';
 
 export const Welcome = () => <Screen>
-  <TopImage />
+  <div>
+    <img
+      width="100%"
+      src={HeaderImage}
+      alt="Shield and credit cards"
+    />
+  </div>
   <Header>
     Hi, Jane!
   </Header>
@@ -31,7 +37,6 @@ export const Welcome = () => <Screen>
     <ListItem>
       <ListItemMark>
         <Checkmark />
-          <CircleCheck />
       </ListItemMark>
       <ListItemContent>
         <Header2>
@@ -57,11 +62,12 @@ export const Welcome = () => <Screen>
       </ListItemContent>
     </ListItem>
   </List>
-
+  <Action>
     <Button 
       to="/institution-search"
       primary={false}
     >
       Continue
     </Button>
+  </Action>
 </Screen>

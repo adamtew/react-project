@@ -37,13 +37,9 @@ export const InstitutionSearch = () => <Page>
     Where is your current balance?
   </Header>
 
-  <SearchBox
-    placeholder="Search"
-  >
-  </SearchBox>
+    <SearchBox placeholder="Search" />
 
   <Tray>
-
 
     <List>
       {renderListItems(data)}

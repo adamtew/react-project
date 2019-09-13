@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
+import './App.css'
 
 import {
   Container,

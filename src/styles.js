@@ -11,11 +11,10 @@ export const Container = styled.div`
 `
 
 export const Modal = styled.div`
-  height: 50%;
-  width: 50%;
-  border-radius: 25px;
-  border: 1px solid gray;
-  padding: 20px 40px;
-  position: absolute;
+  flex: 0 0 auto;
+  margin: auto;
+  width: 375px;
+  height: 812px;
+  position: relative;
   overflow: scroll;
 `

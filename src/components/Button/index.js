@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button as StyledButton } from './styles';
 
 const Button = ({ children, to, primary }) => <>
-  <Link to={to}>
+  <Link to={to} style={{textDecoration: 'none'}}>
     <StyledButton primary={primary}>
       {children}
     </StyledButton>

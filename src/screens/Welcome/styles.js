@@ -68,5 +68,8 @@ export const P = styled.p`
 `
 
 export const Action = styled.div`
-  margin-top: 187px;
+  display: flex;
+  height: 226px;
+  flex-direction: column;
+  justify-content: flex-end;
 `

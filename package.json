@@ -13,12 +13,12 @@
     "styled-components": "^4.3.2"
   },
   "scripts": {
-    "start": "BASE_URL=https://localhost:3000/ react-scripts start",
+    "start": "REACT_APP_BASE_URL=http://localhost:3000/ react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "BASE_URL=https://adamtew.com/react-project npm run build",
-    "deploy": "BASE_URL=https://adamtew.com/react-project gh-pages -d build"
+    "predeploy": "REACT_APP_BASE_URL=https://adamtew.com/react-project/ npm run build",
+    "deploy": "REACT_APP_BASE_URL=https://adamtew.com/react-project/ gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -6,8 +6,8 @@ export const Container = styled.div`
   background: ${THEME.PRIMARY_1};
   justify-content: center;
   align-items: center;
-  height: 100vh;
   position: relative;
+  height: 100vh;
 `
 
 export const Modal = styled.div`
@@ -16,5 +16,5 @@ export const Modal = styled.div`
   width: 375px;
   height: 812px;
   position: relative;
-  overflow: scroll;
+  overflow-y: scroll;
 `

@@ -4,7 +4,7 @@ import { THEME } from '../../lib/theme';
 export const Screen = styled.div`
   background-color: ${THEME.PRIMARY_1};
   position: relative;
-  padding: 60px 35px;
+  padding: 60px 35px 0 35px;
 `
 
 export const TopImage = styled.div`

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
-import { SwitchTransition, CSSTransition } from 'react-transition-group';
-import './App.css'
+import { Route, HashRouter as Router, Switch } from 'react-router-dom';
+import './App.css';
 
 import {
   Container,
@@ -10,32 +9,45 @@ import {
 
 import { Welcome, InstitutionSearch } from './screens';
 
+const MyFrame = () => <div style={{height: '100vh'}}>
+  <iframe
+    title="myframe"
+    src={`${process.env.BASE_URL}/#/app/welcome`}
+    height="100%"
+    width="100%"
+    sandbox
+  />
+</div>
 
-function App() {
+const App = ({match}) => <Container>
+  <Modal>
+    <Switch>
+      <Route
+        exact
+        path={`${match.url}/`}
+        component={Welcome}
+      />
+      <Route
+        path={`${match.url}/welcome`}
+        component={Welcome}
+      />
+      <Route
+        path={`${match.url}/institution-search`}
+        component={InstitutionSearch}
+      />
+    </Switch>
+  </Modal>
+</Container>
+
+function Routes() {
   return (
     <Router>
-      <Route render={ ({ location }) => (
-        <Container>
-          <Modal>
-          <SwitchTransition mode="in-out">
-            <CSSTransition
-              key={location.key}
-              // timeout={200}
-              classNames="fade"
-            >
-              <Switch location={location}>
-                <Route exact path="/welcome" component={Welcome} />
-                <Route exact path="/institution-search" component={InstitutionSearch} />
-                <Route render={() => <div>Not Found</div>} />
-
-              </Switch>
-            </CSSTransition>
-          </SwitchTransition>
-        </Modal>
-      </Container>
-  )}/>
+      <Switch>
+        <Route path="/iframe" component={MyFrame} />
+        <Route path="/app" component={App} />
+      </Switch>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default Routes;

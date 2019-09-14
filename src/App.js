@@ -1,49 +1,39 @@
 import React from 'react';
 import { Route, HashRouter as Router, Switch } from 'react-router-dom';
-
-import {
-  Container,
-  Modal,
-} from './styles'
-
+import { Container, Modal } from './styles'
 import { Welcome, InstitutionSearch } from './screens';
-
-const MyFrame = () => <div style={{height: '100vh'}}>
-  <iframe
-    title="myframe"
-    src={`${process.env.BASE_URL}/#/app/welcome`}
-    height="100%"
-    width="100%"
-    sandbox
-  />
-</div>
-
-const App = ({match}) => <Container>
-  <Modal>
-    <Switch>
-      <Route
-        exact
-        path={`${match.url}/`}
-        component={Welcome}
-      />
-      <Route
-        path={`${match.url}/welcome`}
-        component={Welcome}
-      />
-      <Route
-        path={`${match.url}/institution-search`}
-        component={InstitutionSearch}
-      />
-    </Switch>
-  </Modal>
-</Container>
 
 function Routes() {
   return (
     <Router>
       <Switch>
-        <Route path="/iframe" component={MyFrame} />
-        <Route path="/app" component={App} />
+        <Route path="/iframe" render={() => <div style={{height: '100vh'}}>
+          <iframe
+            title="myframe"
+            src={`${process.env.BASE_URL}/`}
+            height="100%"
+            width="100%"
+            sandbox
+          />
+        </div>} />
+
+        <Route path="/" render={({match}) =>
+          <Container>
+            <Modal>
+              <Switch>
+                <Route
+                  path={`${match.url}institution-search`}
+                  component={InstitutionSearch}
+                />
+                <Route
+                  exact
+                  path={`${match.url}/`|`${match.url}/welcome`}
+                  component={Welcome}
+                />
+              </Switch>
+            </Modal>
+          </Container>}>
+        </Route>
       </Switch>
     </Router>
   )

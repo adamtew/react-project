@@ -64,7 +64,7 @@ export const Welcome = (props) => <Screen>
   </List>
   <Action>
     <Button 
-      to="/app/institution-search"
+      to="/institution-search"
       primary={false}
     >
       Continue

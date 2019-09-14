@@ -1,0 +1,23 @@
+body {
+  font-family: 'Rubik', sans-serif;
+   -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fade-enter {
+  transform: translateY(100%);
+}
+.fade-enter-active {
+  transform: translateY(0);
+  transition: transform 200ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 10ms ease-in;
+}

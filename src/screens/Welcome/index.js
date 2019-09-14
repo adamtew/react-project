@@ -2,15 +2,15 @@ import React from 'react';
 
 import {
   Action,
-  Screen,
   Header,
   Header2,
   List,
   ListItem,
-  P,
+  ListItemContent,
   ListItemMark,
   Note,
-  ListItemContent,
+  P,
+  Screen,
 } from './styles';
 
 import { Button, Checkmark } from '../../components';

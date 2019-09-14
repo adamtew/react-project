@@ -47,7 +47,7 @@ export const InstitutionSearch = () => <Screen>
       {renderListItems(data)}
     </List>
 
-      <Button to="/welcome">
+      <Button to="/app/welcome">
         Next
       </Button>
 

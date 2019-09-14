@@ -17,7 +17,7 @@ import { Button, Checkmark } from '../../components';
 
 import HeaderImage from './header.png';
 
-export const Welcome = () => <Screen>
+export const Welcome = (props) => <Screen>
   <div>
     <img
       width="100%"
@@ -64,7 +64,7 @@ export const Welcome = () => <Screen>
   </List>
   <Action>
     <Button 
-      to="/institution-search"
+      to="/app/institution-search"
       primary={false}
     >
       Continue

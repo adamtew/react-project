@@ -3,7 +3,7 @@ import { THEME } from './lib/theme'
 
 export const Container = styled.div`
   display: flex;
-  background: ${THEME.PRIMARY_1};
+  background: ${THEME.PRIMARY};
   justify-content: center;
   align-items: center;
   position: relative;

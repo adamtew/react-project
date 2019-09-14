@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { THEME } from '../../lib/theme'
 
 export const Screen = styled.div`
-  background-color: ${THEME.PRIMARY_1};
+  background-color: ${THEME.PRIMARY};
 `
 
 export const ScreenTop = styled.div`
@@ -78,7 +78,7 @@ export const Button = styled.div`
   width: 100%;
   border-radius: 15px;
   padding: 10px;
-  background: ${THEME.PRIMARY_1};
+  background: ${THEME.PRIMARY};
   color: ${THEME.SECONDARY};
   display: flex;
   justify-content: center;

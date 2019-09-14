@@ -10,10 +10,9 @@ function Routes() {
         <Route path="/iframe" render={() => <div style={{height: '100vh'}}>
           <iframe
             title="myframe"
-            src={`${process.env.BASE_URL}/`}
+            src={`${process.env.REACT_APP_BASE_URL}#/`}
             height="100%"
             width="100%"
-            sandbox
           />
         </div>} />
 

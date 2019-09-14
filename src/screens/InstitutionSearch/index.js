@@ -1,13 +1,14 @@
 import React from 'react'
 import {
-  Page,
+  Screen,
   Header,
   SearchBox,
   List,
   ListItem,
   Tray,
   ListItemIcon,
-  ListItemContent
+  ListItemContent,
+  ScreenTop
 } from './styles';
 
 import { Button } from '../../components';
@@ -32,12 +33,13 @@ const renderListItems = (items) => items.map(item =>
   </ListItem>
 )
 
-export const InstitutionSearch = () => <Page>
-  <Header>
-    Where is your current balance?
-  </Header>
-
-    <SearchBox placeholder="Search" />
+export const InstitutionSearch = () => <Screen>
+  <ScreenTop>
+    <Header>
+      Where is your current balance?
+    </Header>
+    <SearchBox placeholder="Company name" />
+  </ScreenTop>
 
   <Tray>
 
@@ -50,4 +52,4 @@ export const InstitutionSearch = () => <Page>
       </Button>
 
   </Tray>
-</Page>
+</Screen>

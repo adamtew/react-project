@@ -1,12 +1,16 @@
 import styled from 'styled-components'
 import { THEME } from '../../lib/theme'
 
-export const Page = styled.div`
+export const Screen = styled.div`
   background-color: ${THEME.PRIMARY_1};
-  position: absolute;
+`
+
+export const ScreenTop = styled.div`
+  padding: 0 25px;
 `
 
 export const Header = styled.h3`
+  margin: 69px 0 20px 0;
   color: ${THEME.SECONDARY};
 	font-size: 20px;
 	font-weight: bold;
@@ -15,16 +19,14 @@ export const Header = styled.h3`
 
 export const SearchBox = styled.input`
   width: calc(100% - 43px);
-  margin: 0 0 20px 0;
+  margin: 0 0 30px 0;
   height: 20px;
   padding: 15px 0 15px 43px;
   background-color: #2819AC;
   border-radius: 15px;
   border: none;
 
-  // opacity: 0.5;
   color: rgba(255, 255, 255, 0.5);
-  // color: #FFFFFF;
 	font-size: 16px;
 	line-height: 19px;
 
@@ -37,12 +39,12 @@ export const Tray = styled.div`
   display: flex;
   flex-direction: column;
   background: white;
-  margin: 0 -40px;
-  padding: 0 40px 20px 40px;
+  padding: 22px 25px 20px 25px;
   border-radius: 15px 15px 0 0;
 `
 
 export const List = styled.div`
+  margin: 0 0 12px 0;
   display: flex;
   flex-direction: column;
 `
@@ -50,16 +52,16 @@ export const List = styled.div`
 export const ListItem = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 10px 0;
+  padding: 12px 0;
   list-style: none;
 `
 
 export const ListItemIcon = styled.div`
-  width: 35px;
-  height: 35px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: ${THEME.PLACEHOLDER};
-  margin: 0 10px 0 0;
+  margin: 0 15px 0 0;
 
 `
 

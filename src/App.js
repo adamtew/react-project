@@ -20,7 +20,7 @@ function App() {
           <SwitchTransition mode="in-out">
             <CSSTransition
               key={location.key}
-              timeout={200}
+              // timeout={200}
               classNames="fade"
             >
               <Switch location={location}>

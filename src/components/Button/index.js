@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 
 import { Button as StyledButton } from './styles';
 
-const Button = ({ children, to, primary }) => <>
+const Button = ({ children, to, primary }) =>
   <Link to={to} style={{textDecoration: 'none'}}>
     <StyledButton primary={primary}>
       {children}
     </StyledButton>
   </Link>
-</>
 
 Button.propTypes = {
   primary: PropTypes.bool,

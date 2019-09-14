@@ -23,8 +23,8 @@ const data = [
   'US Bank'
 ];
 
-const renderListItems = (items) => items.map(item =>
-  <ListItem>
+const renderListItems = (items) => items.map((item, index) =>
+  <ListItem key={index}>
     <ListItemIcon>
     </ListItemIcon>
     <ListItemContent>

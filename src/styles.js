@@ -14,7 +14,6 @@ export const Modal = styled.div`
   flex: 0 0 auto;
   height: 812px;
   margin: auto;
-  overflow-y: scroll;
   position: relative;
   width: 375px;
   transition: width .3s ease;

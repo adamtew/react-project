@@ -4,7 +4,10 @@ import { THEME, LAYOUT } from '../../lib/theme';
 export const Screen = styled.div`
   background-color: ${THEME.PRIMARY};
   position: relative;
-  padding: 60px 35px 0 35px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 35px;
+  height: calc(100% - 20px);
   
   @media (max-width: ${LAYOUT.PHONE}) {
     padding: 10px;
@@ -23,6 +26,10 @@ export const Header = styled.h1`
   font-size: 32px;
   font-weight: bold;
   line-height: 38px;
+
+  @media (max-width: ${LAYOUT.PHONE}) {
+    margin: 0;
+  }
 `
 
 export const Note = styled.div`
@@ -73,11 +80,13 @@ export const P = styled.p`
 
 export const Action = styled.div`
   display: flex;
-  height: 226px;
   flex-direction: column;
+  flex: 1 0 auto;
   justify-content: flex-end;
+  margin: 10px 0 0 0;
+  padding: 0 0 60px 0;
 
   @media (max-width: ${LAYOUT.PHONE}) {
-    height: 60px;
+    padding: 0;
   }
 `

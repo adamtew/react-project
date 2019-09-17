@@ -9,35 +9,36 @@ import {
   Tray,
   ListItemIcon,
   ListItemContent,
+  ListItemActive,
   ScreenTop
 } from './styles';
 
 import { Button } from '../../components';
 
 const data = [
-  'Chase',
-  'Wells Fargo',
-  'USAA',
-  'Bank of America',
-  'American Express',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'US Bank'
+  {text: 'Chase', active: false},
+  {text: 'Wells Fargo', active: true},
+  {text: 'USAA', active: false},
+  {text: 'Bank of America', active: false},
+  {text: 'American Express', active: false},
+  {text: 'TD Bank', active: false},
+  {text: 'TD Bank', active: false},
+  {text: 'TD Bank', active: false},
+  {text: 'TD Bank', active: false},
+  {text: 'TD Bank', active: false},
+  {text: 'TD Bank', active: false},
+  {text: 'TD Bank', active: false},
+  {text: 'TD Bank', active: false},
+  {text: 'US Bank', active: false},
 ];
 
-const renderListItems = (items) => items.map((item, index) =>
+const renderListItems = (items) => items.map(({text, active}, index) =>
   <ListItem key={index}>
-    <ListItemIcon>
-    </ListItemIcon>
+    <ListItemIcon />
     <ListItemContent>
-      {item}
+      {text}
     </ListItemContent>
+    {active && <ListItemActive />}
   </ListItem>
 )
 
@@ -50,7 +51,6 @@ export const InstitutionSearch = () => <Screen>
   </ScreenTop>
 
   <Tray>
-
     <List>
       {renderListItems(data)}
     </List>
@@ -60,6 +60,5 @@ export const InstitutionSearch = () => <Screen>
         Next
       </Button>
     </Action>
-
   </Tray>
 </Screen>

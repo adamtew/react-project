@@ -9,9 +9,9 @@ export const Button = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 19px;
+  height: 24px;
 `
 

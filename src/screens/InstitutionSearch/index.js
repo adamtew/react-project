@@ -9,37 +9,28 @@ import {
   Tray,
   ListItemIcon,
   ListItemContent,
+  ListItemActive,
   ScreenTop
 } from './styles';
 
 import { Button } from '../../components';
 
-const data = [
-  'Chase',
-  'Wells Fargo',
-  'USAA',
-  'Bank of America',
-  'American Express',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'TD Bank',
-  'US Bank'
+let data = [
+  {text: 'Chase', active: false},
+  {text: 'Wells Fargo', active: true},
+  {text: 'USAA', active: false},
+  {text: 'Bank of America', active: false},
+  {text: 'American Express', active: false},
+  {text: 'TD Bank', active: false},
+  {text: 'Other Bank', active: false},
+  {text: 'New Bank', active: false},
+  {text: 'Bank of New Zealand', active: false},
+  {text: 'Bank with a long Name', active: false},
+  {text: 'New Credit Union', active: false},
+  {text: 'Principal Bank', active: false},
+  {text: 'Cafateria Credit', active: false},
+  {text: 'Sub-par Bank', active: false},
 ];
-
-const renderListItems = (items) => items.map((item, index) =>
-  <ListItem key={index}>
-    <ListItemIcon>
-    </ListItemIcon>
-    <ListItemContent>
-      {item}
-    </ListItemContent>
-  </ListItem>
-)
 
 export const InstitutionSearch = () => {
   const [filteredData, setData] = useState(data);
@@ -51,16 +42,27 @@ export const InstitutionSearch = () => {
         <SearchBox
           placeholder="Company name"
           onChange={(event) => {
-            console.log('event', event.target.value)
-            return setData(filteredData.filter(item => item.text.toLowerCase() === event.target.value))
+            const filterCheck = data.filter(item => item.text.toLowerCase().includes(event.target.value))
+            return filterCheck.length ? setData(filterCheck) : setData(data)
           }}
         />
     </ScreenTop>
 
     <Tray>
-
       <List>
-        {renderListItems(filteredData)}
+        {filteredData.map(({text, active}, index) =>
+          <ListItem key={index}
+              onClick={(x) => {
+                data = data.map(item => ({ ...item, active: item.text === text ? !item.active : item.active}))
+                setData(filteredData.map(item => ({ ...item, active: item.text === text ? !item.active : item.active})))
+              }}>
+            <ListItemIcon />
+              <ListItemContent>
+              {text}
+            </ListItemContent>
+            {active && <ListItemActive />}
+          </ListItem>
+        )}
       </List>
 
       <Action>
@@ -68,7 +70,6 @@ export const InstitutionSearch = () => {
           Next
         </Button>
       </Action>
-
     </Tray>
   </Screen>
 }

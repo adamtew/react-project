@@ -6,7 +6,7 @@ export const Screen = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 10px 35px;
+  padding: 0 35px;
   height: calc(100% - 20px);
   
   @media (max-width: ${LAYOUT.PHONE}) {

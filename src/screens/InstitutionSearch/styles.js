@@ -5,9 +5,7 @@ export const Screen = styled.div`
   background-color: ${THEME.PRIMARY};
   display: flex;
   flex-direction: column;
-
-  padding: 10px 0;
-  height: calc(100%);
+  height: 100%;
 `
 
 export const ScreenTop = styled.div`
@@ -19,7 +17,7 @@ export const Header = styled.h3`
 	font-weight: bold;
 	line-height: 24px;
   color: ${THEME.SECONDARY};
-   margin: 69px 0 20px 0;
+  margin: 0 0 20px 0;
 
   @media (max-width: ${LAYOUT.PHONE}) {
     margin: 10px 0;
@@ -48,7 +46,7 @@ export const Tray = styled.div`
   border-radius: 15px 15px 0 0;
   display: flex;
   flex-direction: column;
-  padding: 22px 25px 20px 25px;
+  padding: 22px 25px 30px 25px;
 
     flex: 1 1 auto;
     overflow: auto;
@@ -58,14 +56,14 @@ export const List = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 0 12px 0;
-    flex: 1 1 auto;
-    overflow: auto;
+  flex: 1 1 auto;
+  overflow: auto;
 `
 
 export const ListItem = styled.div`
   display: flex;
   flex-direction: row;
-  list-style: none;
+  align-items: center;
   padding: 12px 0;
 `
 
@@ -83,6 +81,36 @@ export const ListItemContent = styled.div`
 	line-height: 19px;
   align-items: center;
   display: flex;
+`
+
+export const ListItemActive = styled.div`
+  background-color: ${THEME.PRIMARY};
+  height: 22px;
+  width: 22px;
+  margin-left: auto;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(45deg);
+
+  &:before {
+    content:"";
+    position: absolute;
+    width:3px;
+    height:9px;
+    background-color: ${THEME.SECONDARY};
+    left:11px;
+    top:6px;
+  }
+
+  &:after {
+    content:"";
+    position: absolute;
+    width:3px;
+    height:3px;
+    background-color: ${THEME.SECONDARY};
+    left:8px;
+    top:12px;
+  }
 `
 
 export const Action = styled.div`

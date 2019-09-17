@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { THEME } from '../../lib/theme'
+import { THEME, LAYOUT } from '../../lib/theme'
 
 export const Screen = styled.div`
   background-color: ${THEME.PRIMARY};
@@ -14,7 +14,11 @@ export const Header = styled.h3`
 	font-weight: bold;
 	line-height: 24px;
   color: ${THEME.SECONDARY};
-  margin: 69px 0 20px 0;
+   margin: 69px 0 20px 0;
+
+  @media (max-width: ${LAYOUT.PHONE}) {
+   margin: 10px 0;
+  }
 `
 
 export const SearchBox = styled.input`
@@ -28,6 +32,10 @@ export const SearchBox = styled.input`
   margin: 0 0 30px 0;
   padding: 15px 0 15px 43px;
   width: calc(100% - 43px);
+
+  @media (max-width: ${LAYOUT.PHONE}) {
+  margin: 0 0 10px 0;
+  }
 `
 
 export const Tray = styled.div`

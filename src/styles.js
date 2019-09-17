@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { THEME } from './lib/theme'
+import { THEME, LAYOUT } from './lib/theme'
 
 export const Container = styled.div`
   display: flex;
@@ -12,9 +12,15 @@ export const Container = styled.div`
 
 export const Modal = styled.div`
   flex: 0 0 auto;
-  margin: auto;
-  width: 375px;
   height: 812px;
-  position: relative;
+  margin: auto;
   overflow-y: scroll;
+  position: relative;
+  width: 375px;
+  transition: width .3s ease;
+
+  @media (max-width: ${LAYOUT.PHONE}) {
+    width: 100%;
+    height: 100%;
+  }
 `

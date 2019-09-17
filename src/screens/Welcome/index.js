@@ -21,8 +21,10 @@ export const Welcome = (props) => <Screen>
   <div>
     <img
       width="100%"
+      height="120px"
       src={HeaderImage}
       alt="Shield and credit cards"
+      style={{objectFit: "contain"}}
     />
   </div>
   <Header>

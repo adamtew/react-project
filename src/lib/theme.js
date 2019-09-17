@@ -6,5 +6,5 @@ export const THEME = {
 }
 
 export const LAYOUT = {
-
+  PHONE: '600px',
 }

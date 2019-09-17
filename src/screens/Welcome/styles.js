@@ -1,10 +1,14 @@
 import styled from 'styled-components';
-import { THEME } from '../../lib/theme';
+import { THEME, LAYOUT } from '../../lib/theme';
 
 export const Screen = styled.div`
   background-color: ${THEME.PRIMARY};
   position: relative;
   padding: 60px 35px 0 35px;
+  
+  @media (max-width: ${LAYOUT.PHONE}) {
+    padding: 10px;
+  }
 `
 
 export const TopImage = styled.div`
@@ -72,4 +76,8 @@ export const Action = styled.div`
   height: 226px;
   flex-direction: column;
   justify-content: flex-end;
+
+  @media (max-width: ${LAYOUT.PHONE}) {
+    height: 60px;
+  }
 `

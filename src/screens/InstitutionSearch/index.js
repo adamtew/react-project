@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Action,
   Screen,
   Header,
   SearchBox,
@@ -19,6 +20,13 @@ const data = [
   'USAA',
   'Bank of America',
   'American Express',
+  'TD Bank',
+  'TD Bank',
+  'TD Bank',
+  'TD Bank',
+  'TD Bank',
+  'TD Bank',
+  'TD Bank',
   'TD Bank',
   'US Bank'
 ];
@@ -47,9 +55,11 @@ export const InstitutionSearch = () => <Screen>
       {renderListItems(data)}
     </List>
 
+    <Action>
       <Button to="/welcome">
         Next
       </Button>
+    </Action>
 
   </Tray>
 </Screen>

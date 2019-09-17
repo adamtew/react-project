@@ -3,6 +3,11 @@ import { THEME, LAYOUT } from '../../lib/theme'
 
 export const Screen = styled.div`
   background-color: ${THEME.PRIMARY};
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px 0;
+  height: calc(100%);
 `
 
 export const ScreenTop = styled.div`
@@ -17,7 +22,7 @@ export const Header = styled.h3`
    margin: 69px 0 20px 0;
 
   @media (max-width: ${LAYOUT.PHONE}) {
-   margin: 10px 0;
+    margin: 10px 0;
   }
 `
 
@@ -34,7 +39,7 @@ export const SearchBox = styled.input`
   width: calc(100% - 43px);
 
   @media (max-width: ${LAYOUT.PHONE}) {
-  margin: 0 0 10px 0;
+    margin: 0 0 10px 0;
   }
 `
 
@@ -44,12 +49,17 @@ export const Tray = styled.div`
   display: flex;
   flex-direction: column;
   padding: 22px 25px 20px 25px;
+
+    flex: 1 1 auto;
+    overflow: auto;
 `
 
 export const List = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 0 12px 0;
+    flex: 1 1 auto;
+    overflow: auto;
 `
 
 export const ListItem = styled.div`
@@ -73,6 +83,13 @@ export const ListItemContent = styled.div`
 	line-height: 19px;
   align-items: center;
   display: flex;
+`
+
+export const Action = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: flex-end;
 `
 
 export const Button = styled.div`

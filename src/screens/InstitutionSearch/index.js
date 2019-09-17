@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Action,
   Screen,
@@ -41,25 +41,34 @@ const renderListItems = (items) => items.map((item, index) =>
   </ListItem>
 )
 
-export const InstitutionSearch = () => <Screen>
-  <ScreenTop>
-    <Header>
-      Where is your current balance?
-    </Header>
-    <SearchBox placeholder="Company name" />
-  </ScreenTop>
+export const InstitutionSearch = () => {
+  const [filteredData, setData] = useState(data);
+  return <Screen>
+    <ScreenTop>
+      <Header>
+        Where is your current balance?
+      </Header>
+        <SearchBox
+          placeholder="Company name"
+          onChange={(event) => {
+            console.log('event', event.target.value)
+            return setData(filteredData.filter(item => item.text.toLowerCase() === event.target.value))
+          }}
+        />
+    </ScreenTop>
 
-  <Tray>
+    <Tray>
 
-    <List>
-      {renderListItems(data)}
-    </List>
+      <List>
+        {renderListItems(filteredData)}
+      </List>
 
-    <Action>
-      <Button to="/welcome">
-        Next
-      </Button>
-    </Action>
+      <Action>
+        <Button to="/welcome">
+          Next
+        </Button>
+      </Action>
 
-  </Tray>
-</Screen>
+    </Tray>
+  </Screen>
+}
